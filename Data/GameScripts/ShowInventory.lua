@@ -1,0 +1,1 @@
+Scene:getGameObject("inventory"):setVisible(true);

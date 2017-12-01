@@ -1,0 +1,11 @@
+ShowInventory:
+    __init__:
+    __body__:
+        source:"Data/GameScripts/ShowInventory.lua"
+
+Template(ShowInventory);
+
+HideInventory:
+    __init__:
+    __body__:
+        source:"Data/GameScripts/HideInventory.lua"

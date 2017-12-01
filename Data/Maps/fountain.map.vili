@@ -1,0 +1,137 @@
+Include (Obe);
+Flag (Map);
+Flag (Lock);
+
+Meta:
+    name:"fountain"
+
+View:
+    size:1.0
+    pos:Vector2<WorldUnits>(0.0, 0.0)
+    referencial:Referencial<TopLeft>()
+
+LevelSprites:
+    fountain:
+        path:"Sprites/LevelSprites//fountain.png"
+        rect:
+            x:0.0
+            y:0.0
+            w:3.555556
+            h:2.0
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:3
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+    coin_fountain:
+        path:"Sprites/LevelSprites//coin_e.png"
+        rect:
+            x:2.598148
+            y:0.751852
+            w:0.211111
+            h:0.211111
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:1
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+    fish:
+        path:"Sprites/LevelSprites//fish.png"
+        rect:
+            x:1.085185
+            y:1.007407
+            w:0.37037
+            h:0.151852
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:2
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+
+Collisions:
+    coin_fountain:
+        unit:
+            unit:"WorldUnits"
+        points:[
+            2.768519
+            0.835185
+            2.75
+            0.807407
+            2.712963
+            0.788889
+            2.666667
+            0.8
+            2.640741
+            0.833333
+            2.637037
+            0.87963
+            2.666667
+            0.912963
+            2.709259
+            0.927778
+            2.742593
+            0.903704
+            2.772222
+            0.877778
+        ]
+    fish:
+        unit:
+            unit:"WorldUnits"
+        points:[
+            1.301852
+            1.07037
+            1.294444
+            1.057407
+            1.255556
+            1.066667
+            1.218519
+            1.051852
+            1.131481
+            1.014815
+            1.085185
+            1.007407
+            1.092593
+            1.037037
+            1.116667
+            1.081481
+            1.159259
+            1.124074
+            1.266667
+            1.153704
+            1.32037
+            1.142593
+            1.37963
+            1.109259
+            1.390741
+            1.083333
+            1.457407
+            1.037037
+            1.431481
+            1.033333
+            1.418519
+            1.02037
+            1.388889
+            1.057407
+            1.340741
+            1.074074
+        ]
+
+GameObjects:
+    exit:
+        type:"Exit"
+        Requires:
+            location:"map_1.map.vili"
+    coin_fountain:
+        type:"PCObject"
+        Requires:
+            behaviour:"Coin"
+    fish:
+        type:"PCObject"
+        Requires:
+            behaviour:"Fish"
+
+Script:
+    source:"Data/GameScripts/ShowInventory.lua"

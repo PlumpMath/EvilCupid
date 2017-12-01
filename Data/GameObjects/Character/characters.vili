@@ -1,0 +1,6 @@
+Fisher:
+    expressions:
+        default:"neutral"
+        neutral:
+            sprite:"Sprites/GameObjects/Character/Fisher/fisher.png"
+			textBackground:"Sprites/GameObjects/Character/Fisher/textBackground.png"

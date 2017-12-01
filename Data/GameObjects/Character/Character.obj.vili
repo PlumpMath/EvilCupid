@@ -1,0 +1,5 @@
+Include (Obe);
+
+Character:
+    Script:
+        source:"Data/GameObjects/Character/Character.lua"

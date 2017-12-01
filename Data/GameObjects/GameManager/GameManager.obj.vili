@@ -1,0 +1,7 @@
+Include (Obe);
+
+GameManager:
+    Script:
+        source:"Data/GameObjects/GameManager/GameManager.lua"
+    permanent:True
+

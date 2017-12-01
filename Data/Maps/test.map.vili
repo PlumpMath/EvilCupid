@@ -1,0 +1,17 @@
+Include (Obe);
+Flag (Map);
+Flag (Lock);
+
+Meta:
+    name:"test"
+
+View:
+    size:1.0
+    pos:Vector2<WorldUnits>(0.0, 0.0)
+    referencial:Referencial<TopLeft>()
+
+LevelSprites:
+
+GameObjects:
+    Test:
+        type:"Test"

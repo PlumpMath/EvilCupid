@@ -1,0 +1,14 @@
+Include (Obe);
+
+Inventory:
+    LevelSprite:
+        rect:Rect<ViewPercentage>(0, 0, 0.05, 1)
+        xTransform:"Camera"
+        yTransform:"Camera"
+        layer:1.0
+        z-depth:1.0
+    Script:
+        sources:["Data/GameObjects/Inventory/Objects.lua", "Data/GameObjects/Inventory/Inventory.lua"]
+    permanent:True
+
+

@@ -1,0 +1,8 @@
+Include (Obe);
+
+VisualNovel:
+    Script:
+        source:"Data/GameObjects/VisualNovel/VisualNovel.lua"
+    LevelSprite:
+        rect:Rect<ViewPercentage>(0, 0, 1, 1)
+        layer:0.0

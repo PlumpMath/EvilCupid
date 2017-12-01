@@ -1,0 +1,1 @@
+Scene:loadFromFile("start.map.vili");

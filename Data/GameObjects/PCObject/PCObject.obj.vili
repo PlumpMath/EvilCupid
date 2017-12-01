@@ -1,0 +1,9 @@
+Include (Obe);
+
+PCObject:
+    Script:
+        sources:[
+            "Data/GameObjects/PCObject/Objects.lua"
+            "Data/GameObjects/PCObject/PCObject.lua"
+        ]
+

@@ -1,0 +1,15 @@
+Include (Obe);
+
+Pointer:
+    LevelSprite:
+        path:"Sprites/LevelSprites/cursor.png"
+        rect:Rect<WorldUnits>(0, 0, 1, 1)
+        xTransform:"Camera"
+        yTransform:"Camera"
+        layer:0.0
+        z-depth:0.0
+    Script:
+        source:"Data/GameObjects/Pointer/Pointer.lua"
+    permanent:True
+
+

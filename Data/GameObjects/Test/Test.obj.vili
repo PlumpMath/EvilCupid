@@ -1,0 +1,6 @@
+Include (Obe);
+
+Test:
+    Script:
+        source:"Data/GameObjects/Test/Test.lua"
+    permanent:True

@@ -1,0 +1,3 @@
+myscene:
+    background:"Sprites/LevelSprites/map_1.png"
+    textBackground:"Sprites/GameObjects/Character/Bishamon/textBackground.png"

@@ -1,0 +1,56 @@
+Include (Obe);
+Flag (Map);
+Flag (Lock);
+
+Meta:
+    name:"sandbox"
+
+View:
+    size:0.313811
+    pos:Vector2<WorldUnits>(0.0, 0.0)
+    referencial:Referencial<TopLeft>()
+
+LevelSprites:
+    sprite0:
+        path:"Sprites/LevelSprites//exit.png"
+        rect:
+            x:3.172222
+            y:0.031481
+            w:0.37037
+            h:0.177778
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:1
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+    sprite1:
+        path:"Sprites/LevelSprites//cursor.png"
+        rect:
+            x:0.0
+            y:0.0
+            w:0.029057
+            h:0.029057
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:1
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+
+Collisions:
+    collider0:
+        unit:
+            unit:"WorldUnits"
+        points:[
+            3.543048
+            0.031579
+            3.171705
+            0.030998
+            3.171124
+            0.208824
+            3.542467
+            0.209405
+        ]
+
+

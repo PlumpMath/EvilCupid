@@ -1,0 +1,119 @@
+Include (Obe);
+Flag (Map);
+Flag (Lock);
+
+Meta:
+    name:"hospital"
+
+View:
+    size:1.0
+    pos:Vector2<WorldUnits>(0.0, 0.0)
+    referencial:Referencial<TopLeft>()
+
+LevelSprites:
+    hospital:
+        path:"Sprites/LevelSprites//hospital.png"
+        rect:
+            x:0.0
+            y:0.0
+            w:3.555556
+            h:2.0
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:3
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+    toenailclipper:
+        path:"Sprites/LevelSprites//toenailclipper.png"
+        rect:
+            x:0.655556
+            y:1.12037
+            w:0.437037
+            h:0.474574
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:1
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+    coin_hospital:
+        path:"Sprites/LevelSprites//coin_e.png"
+        rect:
+            x:0.37963
+            y:0.761111
+            w:0.266667
+            h:0.266667
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:1
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+
+Collisions:
+    coin_hospital:
+        unit:
+            unit:"WorldUnits"
+        points:[
+            0.592593
+            0.861111
+            0.568519
+            0.833333
+            0.542593
+            0.814815
+            0.511111
+            0.811111
+            0.466667
+            0.824074
+            0.442593
+            0.855556
+            0.42963
+            0.9
+            0.446296
+            0.940741
+            0.47963
+            0.972222
+            0.531481
+            0.975926
+            0.572222
+            0.953704
+            0.596296
+            0.909259
+        ]
+    toenailclipper:
+        unit:
+            unit:"WorldUnits"
+        points:[
+            0.807407
+            1.216667
+            0.883333
+            1.4
+            0.790741
+            1.366667
+            0.748148
+            1.383333
+            0.940741
+            1.490741
+            0.988889
+            1.468519
+            0.983333
+            1.442593
+        ]
+
+GameObjects:
+    exit:
+        type:"Exit"
+        Requires:
+            location:"map_1.map.vili"
+    toenailclipper:
+        type:"PCObject"
+        Requires:
+            behaviour:"Clipper"
+    coin_hospital:
+        type:"PCObject"
+        Requires:
+            behaviour:"Coin"
+
+Script:
+    source:"Data/GameScripts/ShowInventory.lua"

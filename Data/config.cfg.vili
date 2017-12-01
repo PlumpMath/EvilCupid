@@ -1,0 +1,9 @@
+KeyBinding:
+    game:
+        Click:"Pressed:LMB"
+        Combine:"Pressed:RMB"
+        Enter:"Pressed:Return"
+        Answer_1:"Pressed:1"
+        Answer_2:"Pressed:2"
+        Answer_3:"Pressed:3"
+        Answer_4:"Pressed:4"
