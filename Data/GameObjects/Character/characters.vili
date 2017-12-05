@@ -4,3 +4,10 @@ Fisher:
         neutral:
             sprite:"Sprites/GameObjects/Character/Fisher/fisher.png"
 			textBackground:"Sprites/GameObjects/Character/Fisher/textBackground.png"
+
+Fish:
+    expressions:
+        default:"neutral"
+        neutral:
+            sprite:"Sprites/GameObjects/Character/Fish/fish_vn.png"
+            textBackground:"Sprites/GameObjects/Character/Fish/textBackground.png"

@@ -19,6 +19,7 @@ end
 
 function InitializeBindings()
     Global.Actions["Enter"] = function()
+        print("HEHEHEHE");
         if isAsking == false and #queue > 0 then
             Object:next();
         end

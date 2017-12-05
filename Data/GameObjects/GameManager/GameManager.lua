@@ -1,16 +1,22 @@
 function Local.Init()
     print("Game Manager Started");
     Scene:getGameObject("inventory"):setVisible(false);
+    Object.started = false;
     Object.biers = { false, false, false };
     Object.pan = false;
     Object.cMusic = "";
+    Object.emptyTape = false;
+    Object.currentPic = 1;
     overlay = Scene:getGameObject("overlay"):Get();
     sorry = obe.Sound("Sounds/sorry.ogg");
     sorry:play();
 end
 
 function Global.Actions.Enter()
-    Scene:loadFromFile("map_1.map.vili");
+    if not Object.started then
+        Scene:loadFromFile("map_1.map.vili");
+        Object.started = true;
+    end
 end
 
 function Global.Scene.MapLoaded(name)

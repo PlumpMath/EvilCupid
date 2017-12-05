@@ -215,26 +215,35 @@ Objects.TinyIsland = {
     onclick = function(self)
         local inv = Scene:getGameObject("inventory");
         local VN = Scene:getGameObject("vn");
+        local gm = Scene:getGameObject("gameManager");
 
-        local fcoin = false
-        for _, zone in pairs(inv:getZones()) do 
-            if zone.object ~= nil and zone.object.name == "Coin" then
-                zone:remove();
-                inv:add("tape");
-                fcoin = true;
-                break;
+        if not gm.emptyTape then
+            local fcoin = false
+            for _, zone in pairs(inv:getZones()) do 
+                if zone.object ~= nil and zone.object.name == "Coin" then
+                    zone:remove();
+                    inv:add("tape");
+                    fcoin = true;
+                    break;
+                end
             end
-        end
-        if fcoin then
-            VN:scene("myscene");
-            local fisher = VN:character("Fisher");
-            fisher:say{text = "You're a lucky guy ! I will give you this empty tape and I take your coin"};
+            if fcoin then
+                VN:scene("myscene");
+                local fisher = VN:character("Fisher");
+                fisher:say{text = "You're a lucky guy ! I will give you this empty tape and I take your coin"};
+                gm.emptyTape = true;
+                VN:next();
+            else
+                VN:scene("myscene");
+                local bishamon = VN:character("Fisher");
+                bishamon:say{text = "If you bring me a coin I can give you something pretty cool !"};
 
-            VN:next();
+                VN:next();
+            end
         else
             VN:scene("myscene");
-            local bishamon = VN:character("Fisher");
-            bishamon:say{text = "If you bring me a coin I can give you something pretty cool !"};
+            local fisher = VN:character("Fisher");
+            fisher:say{text = "I already gave you my empty tape ! I don't have any more !"};
 
             VN:next();
         end
@@ -302,9 +311,16 @@ Objects.Fish = {
         local inv = Scene:getGameObject("inventory");
         if inv:getSelected() ~= nil and inv:getSelected().object ~= nil then
             if inv:getSelected().object.name == "Billy" then
+                local VN = Scene:getGameObject("vn");
                 self:say("GIVE ME BILLY AND I'LL HELP YOU");
                 gibillysound = obe.Sound("Sounds/givebilly.ogg");
                 gibillysound:play();
+
+                VN:scene("fountain");
+                local fish = VN:character("Fish");
+                fish:say{text = "If you give me Billy as food I can testify something for you !"};
+                fish:ask{question = "Wanna give me Billy ?", answers = {"HELL YEAH, BON APPETIT !", "HECK NO, BILLY IS MY FRIEND NOW"}};
+                VN:next();
             else
                 self:say("Gloub gloub");
                 gloubsound = obe.Sound("Sounds/gloubgloub.ogg");
@@ -353,5 +369,50 @@ Objects.Billy = {
             foundbillysound:play();
             Scene:getGameObject("inventory"):add("petworm");
         end
+    end
+}
+
+Objects.LoveHouse = {
+    onclick = function(self)
+        print("Entering LoveHouse");
+        Scene:loadFromFile("loveroom.map.vili");
+    end
+}
+
+Objects.Camera = {
+    onclick = function(self)
+        print("Loading Camera");
+        Scene:loadFromFile("camera.map.vili");
+    end
+}
+
+function AllPicsToBack()
+    Scene:getLevelSprite("pic_1"):setZDepth(3);
+    Scene:getLevelSprite("pic_2"):setZDepth(3);
+    Scene:getLevelSprite("pic_3"):setZDepth(3);
+    Scene:getLevelSprite("pic_4"):setZDepth(3);
+end
+
+Objects.CameraL = {
+    oncreate = function(self)
+        AllPicsToBack();
+        Scene:getLevelSprite("pic_" .. tostring(gm.currentPic)):setZDepth(2);
+    end,
+    onclick = function(self)
+        local gm = Scene:getGameObject("gameManager");
+        AllPicsToBack();
+        gm.currentPic = gm.currentPic - 1;
+        if gm.currentPic == 0 then gm.currentPic = 4; end
+        Scene:getLevelSprite("pic_" .. tostring(gm.currentPic)):setZDepth(2);
+    end
+}
+
+Objects.CameraR = {
+    onclick = function(self)
+        local gm = Scene:getGameObject("gameManager");
+        AllPicsToBack();
+        gm.currentPic = gm.currentPic + 1;
+        if gm.currentPic == 5 then gm.currentPic = 1; end
+        Scene:getLevelSprite("pic_" .. tostring(gm.currentPic)):setZDepth(2);
     end
 }

@@ -1,0 +1,130 @@
+Include (Obe);
+Flag (Map);
+Flag (Lock);
+
+Meta:
+    name:"camera"
+
+View:
+    size:1.0
+    pos:Vector2<WorldUnits>(0.0, 0.0)
+    referencial:Referencial<TopLeft>()
+
+LevelSprites:
+    loveroom_blur:
+        path:"Sprites/LevelSprites//loveroom_blur.png"
+        rect:
+            x:0.0
+            y:0.0
+            w:3.555556
+            h:2.0
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:3
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+    pic_1:
+        path:"Sprites/LevelSprites//eggs_pic.png"
+        rect:
+            x:1.601852
+            y:0.640741
+            w:1.633333
+            h:1.174074
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:1
+        z-depth:2
+        xTransform:"Camera"
+        yTransform:"Camera"
+    pic_2:
+        path:"Sprites/LevelSprites//control_worm.png"
+        rect:
+            x:1.601852
+            y:0.640741
+            w:1.633333
+            h:1.174074
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:1
+        z-depth:3
+        xTransform:"Camera"
+        yTransform:"Camera"
+    pic_3:
+        path:"Sprites/LevelSprites//control_hen.png"
+        rect:
+            x:1.601852
+            y:0.640741
+            w:1.633333
+            h:1.174074
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:1
+        z-depth:3
+        xTransform:"Camera"
+        yTransform:"Camera"
+    pic_4:
+        path:"Sprites/LevelSprites//control_fish.png"
+        rect:
+            x:1.601852
+            y:0.640741
+            w:1.633333
+            h:1.174074
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:1
+        z-depth:3
+        xTransform:"Camera"
+        yTransform:"Camera"
+    camera:
+        path:"Sprites/LevelSprites//camera.png"
+        rect:
+            x:0.0
+            y:0.0
+            w:3.555556
+            h:2.0
+            unit:"WorldUnits"
+        rotation:0.0
+        layer:1
+        z-depth:1
+        xTransform:"Camera"
+        yTransform:"Camera"
+
+Collisions:
+    left_arrow:
+        unit:
+            unit:"WorldUnits"
+        points:[
+            1.831481
+            1.15
+            1.672222
+            1.287037
+            1.835185
+            1.440741
+        ]
+    right_arrow:
+        unit:
+            unit:"WorldUnits"
+        points:[
+            2.953704
+            1.188889
+            2.935185
+            1.492593
+            3.107407
+            1.35
+        ]
+
+GameObjects:
+    exit:
+        type:"Exit"
+        Requires:
+            location:"loveroom.map.vili"
+    left_arrow:
+        type:"PCObject"
+        Requires:
+            behaviour:"CameraL"
+    right_arrow:
+        type:"PCObject"
+        Requires:
+            behaviour:"CameraR"
+

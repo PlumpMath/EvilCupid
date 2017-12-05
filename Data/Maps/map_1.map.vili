@@ -519,6 +519,10 @@ GameObjects:
             behaviour:"Hospital"
     vn:
         type:"VisualNovel"
+    house4:
+        type:"PCObject"
+        Requires:
+            behaviour:"LoveHouse"
 
 Script:
     source:"Data/GameScripts/HideInventory.lua"

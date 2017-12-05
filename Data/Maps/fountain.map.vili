@@ -132,6 +132,8 @@ GameObjects:
         type:"PCObject"
         Requires:
             behaviour:"Fish"
+    vn:
+        type:"VisualNovel"
 
 Script:
     source:"Data/GameScripts/ShowInventory.lua"
